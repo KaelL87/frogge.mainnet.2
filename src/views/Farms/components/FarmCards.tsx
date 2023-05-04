@@ -194,7 +194,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             </CardIcon>
             <StyledTitle>
               {farm.name}
-              <StyledVersion> {apr ? apr.apr + '%' : '0%'}</StyledVersion>
+              <StyledVersion> {apr ? apr.apr + '% APR' : '0% APR'}</StyledVersion>
             </StyledTitle>
             <StyledDetails>
               <StyledDetail>{apr ? apr.totalValue + ' TLV' : '0 TLV'}</StyledDetail>

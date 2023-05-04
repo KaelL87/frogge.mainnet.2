@@ -1,0 +1,21 @@
+body {
+    background: #0f1840;
+    margin: 0;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url('https://pikwizard.com/photos/barn-farm-building-building--30bd39583f15678a4a13e93926e55b77-m.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

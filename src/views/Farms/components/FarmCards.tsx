@@ -199,9 +199,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
             <StyledDetails>
               <StyledDetail>{apr ? apr.totalValue + ' TLV' : '0 TLV'}</StyledDetail>
             </StyledDetails>
-            <StyledDetails>
-              <StyledDetail><span><sup>*</sup></span></StyledDetail>
-            </StyledDetails>
             <Spacer />
             <Button
               text="Select"

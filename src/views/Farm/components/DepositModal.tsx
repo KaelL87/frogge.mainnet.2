@@ -53,7 +53,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
       <ModalActions>
         <Button text="Cancel" variant="secondary" onClick={onDismiss} />
         <Button
-          disabled={!val || val == '0' || pendingTx}
+          disabled={!val || val === '0' || pendingTx}
           text={pendingTx ? 'Pending Confirmation' : 'Confirm'}
           variant={'tertiary'}
           onClick={async () => {

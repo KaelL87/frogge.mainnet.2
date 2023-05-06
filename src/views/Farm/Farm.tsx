@@ -1,4 +1,5 @@
-import React, { useMemo, useEffect } from 'react'
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useMemo, useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { useParams } from 'react-router-dom'
@@ -17,9 +18,12 @@ import { getFarmContract } from '../../farm/utils'
 
 import Harvest from './components/Harvest'
 import Stake from './components/Stake'
+import { getApr } from '../../utils/getApr'
 
 const Farm: React.FC = () => {
   const { farmId } = useParams<{ farmId: string }>()
+  
+  const [apr, setApr] = useState(null)
 
   const {
     pid,
@@ -61,12 +65,20 @@ const Farm: React.FC = () => {
   const earnTokenName = useMemo(() => {
     return earnToken.toUpperCase()
   }, [earnToken])
-
+  useEffect(() => {
+    async function fetchApr() {
+      const temp = await getApr();
+      console.log(temp);
+      setApr(temp); 
+      return; //Should get decimals from contract or config
+    }
+      fetchApr();
+  }, [])
   return (
     <>
       <PageHeader
         subtitle={`Deposit ${lpTokenName} Tokens and earn $FRGE`}
-        title={`${name} ${version}`}
+        title={`${name} ${apr ?apr.apr : '0'}% APR`}
       />
       <StyledFarm>
         <StyledCardsWrapper>

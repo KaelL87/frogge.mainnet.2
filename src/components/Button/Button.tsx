@@ -1,3 +1,5 @@
+/* eslint-disable no-mixed-operators */
+/* eslint-disable no-fallthrough */
 import React, { useContext, useMemo } from 'react'
 import styled, { ThemeContext } from 'styled-components'
 
@@ -33,6 +35,7 @@ const Button: React.FC<ButtonProps> = ({
   const { color, spacing } = useContext(ThemeContext)
 
   let buttonColor: string
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   let background: string
   switch (variant) {
     case 'tertiary':

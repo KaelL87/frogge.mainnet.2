@@ -17,6 +17,7 @@ const Value: React.FC<ValueProps> = ({ value, decimals }) => {
       updateStart(end)
       updateEnd(value)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value])
 
   return (

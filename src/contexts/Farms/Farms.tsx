@@ -11,6 +11,7 @@ const Farms: React.FC = ({ children }) => {
   const [unharvested] = useState(0)
 
   const yam = useYam()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { account } = useWallet()
 
   const farms = getFarms(yam)

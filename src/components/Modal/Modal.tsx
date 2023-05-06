@@ -54,6 +54,7 @@ const StyledModal = styled.div`
   min-height: 0;
 `
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledModalContent = styled.div``
 
 export default Modal

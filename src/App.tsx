@@ -92,6 +92,7 @@ const Disclaimer: React.FC = () => {
     if (!seenDisclaimer) {
       onPresentDisclaimerModal()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <div />

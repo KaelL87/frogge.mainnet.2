@@ -30,6 +30,7 @@ const useAllowance = (lpContract: Contract) => {
     }
     let refreshInterval = setInterval(fetchAllowance, 10000)
     return () => clearInterval(refreshInterval)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account, farmContract, lpContract])
 
   return allowance

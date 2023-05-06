@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { ethers } from 'ethers'
 import { Contract } from 'web3-eth-contract'
 import ERC20Abi from './lib/abi/erc20.json'

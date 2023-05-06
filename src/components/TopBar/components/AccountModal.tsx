@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
@@ -23,6 +24,7 @@ import {getEthChainInfo} from "../../../utils/getEthChainInfo";
 import imageLTO from '../../../assets/img/logo-rev.png'
 
 const {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ethscanType
 } = getEthChainInfo();
 

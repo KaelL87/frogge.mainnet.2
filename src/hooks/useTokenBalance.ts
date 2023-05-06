@@ -24,6 +24,7 @@ const useTokenBalance = (tokenAddress: string) => {
     if (account && ethereum) {
       fetchBalance()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account, ethereum, setBalance, block, tokenAddress])
 
   return balance

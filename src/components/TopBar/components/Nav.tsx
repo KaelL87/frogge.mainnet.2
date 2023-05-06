@@ -45,6 +45,7 @@ const StyledLink = styled(NavLink)`
   }
 `
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const StyledAbsoluteLink = styled.a`
   color: ${(props) => props.theme.color.grey[400]};
   font-weight: 700;

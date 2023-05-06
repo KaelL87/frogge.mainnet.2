@@ -1,4 +1,4 @@
-import BigNumber from 'bignumber.js/bignumber'
+// import BigNumber from 'bignumber.js/bignumber'
 // import Web3 from 'web3'
 import * as Types from './types.js'
 import {

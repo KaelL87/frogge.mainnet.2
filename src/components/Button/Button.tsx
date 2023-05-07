@@ -11,7 +11,7 @@ interface ButtonProps {
   menuButton?: boolean,
   href?: string,
   onClick?: () => void,
-  size?: 'xs' | 'sm' | 'md' | 'lg',
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'auto',
   text?: string,
   to?: string,
   variant?: 'default' | 'secondary' | 'tertiary',
@@ -53,7 +53,7 @@ const Button: React.FC<ButtonProps> = ({
   let buttonSize: number
   let buttonPadding: number
   let fontSize: number
-  let minHeight: number = 45
+  let minHeight: number | string = 45
   switch (size) {
     case 'xs':
       minHeight = 36
@@ -71,6 +71,9 @@ const Button: React.FC<ButtonProps> = ({
       buttonSize = 72
       fontSize = 16
       break
+      case 'auto':
+        minHeight = 'auto'
+        break
     case 'md':
     default:
       boxShadow = `6px 6px 12px ${color.grey[300]},
@@ -123,7 +126,7 @@ interface StyledButtonProps {
   backgroundColor: string,
   border: boolean,
   variant: string,
-  minHeight: number
+  minHeight: number | string
 }
 
 const StyledButton = styled.button<StyledButtonProps>`
@@ -150,12 +153,19 @@ const StyledButton = styled.button<StyledButtonProps>`
   padding-left: ${props => props.padding}px;
   padding-right: ${props => props.padding}px;
   pointer-events: ${props => !props.disabled ? undefined : 'none'};
-  width: 100%;
+  width: auto;
+  margin: 0 auto;
   &:hover {
     background-color: ${props => props.backgroundColor ? `${props.backgroundColor}aa` : 
         (props.variant === 'secondary' ? props.theme.color.grey[200] : (props.color && `${props.color}99` || props.theme.color.grey[400]))
     };
     color: ${props => props.color && ((props.menuButton || props.backgroundColor || props.variant === 'tertiary') ? props.theme.color.white : props.theme.color.grey[800])}
+  }
+  
+  @media (max-width: 354px) {
+    height: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 `
 
@@ -164,7 +174,6 @@ const StyledLink = styled(Link)`
   color: inherit;
   display: flex;
   flex: 1;
-  height: 56px;
   justify-content: center;
   margin: 0 ${props => -props.theme.spacing[4]}px;
   padding: 0 ${props => props.theme.spacing[4]}px;
@@ -176,7 +185,6 @@ const StyledExternalLink = styled.a`
   color: inherit;
   display: flex;
   flex: 1;
-  height: 56px;
   justify-content: center;
   margin: 0 ${props => -props.theme.spacing[4]}px;
   padding: 0 ${props => props.theme.spacing[4]}px;

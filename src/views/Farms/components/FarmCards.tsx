@@ -83,7 +83,7 @@ const FarmCards: React.FC = () => {
             {farmRow.map((farm, j) => (
               <React.Fragment key={j}>
                 <FarmCard farm={farm} />
-                {(j === 0 || j === 1) && <StyledSpacer />}
+                {(j > 1) && <StyledSpacer />}
               </React.Fragment>
             ))}
           </StyledRow>
@@ -272,10 +272,9 @@ const StyledCardAccent = styled.div`
 `
 
 const StyledCards = styled.div`
-  width: 900px;
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  width: 100%;
+  display: flex;  
+  justify-content: space-evenly;
 `
 
 const StyledLoadingWrapper = styled.div`
@@ -289,8 +288,9 @@ const StyledRow = styled.div`
   display: flex;
   margin-bottom: ${(props) => props.theme.spacing[4]}px;
   flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
   @media (max-width: 768px) {
-    width: 100%;
     flex-flow: column nowrap;
     align-items: center;
   }
@@ -298,7 +298,10 @@ const StyledRow = styled.div`
 
 const StyledCardWrapper = styled.div`
   display: flex;
-  width: calc((900px - ${(props) => props.theme.spacing[4]}px * 2) / 3);
+  justify-content: center;
+  max-width: 300px;
+  min-width: 205px;
+  width: 100%;
   position: relative;
 `
 
@@ -306,6 +309,7 @@ const StyledTitle = styled.h4`
   color: ${(props) => props.theme.color.grey[600]};
   font-size: 24px;
   font-weight: 700;
+  text-align: center;
   margin: ${(props) => props.theme.spacing[2]}px 0 0;
   padding: 0;
 `

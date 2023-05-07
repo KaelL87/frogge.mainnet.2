@@ -21,7 +21,6 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu, showButton = false
           <StyledLogoWrapper>
             <Logo />
           </StyledLogoWrapper>
-          <Nav showMenu={false} />
           {showButton &&
           <StyledAccountButtonWrapper>
             <AccountButton />
@@ -34,10 +33,7 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu, showButton = false
 }
 
 const StyledLogoWrapper = styled.div`
-  width: 360px;
-  @media (max-width: 400px) {
-    width: auto;
-  }
+  width: auto;
 `
 
 const StyledTopBar = styled.div`
@@ -64,7 +60,7 @@ const StyledNavWrapper = styled.div`
 const StyledAccountButtonWrapper = styled.div`
   align-items: center;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   width: 156px;
   @media (max-width: 400px) {
     justify-content: center;

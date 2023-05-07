@@ -48,6 +48,7 @@ const StyledLink = styled.a`
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
+  text-align: center;
   &:hover {
     color: #8cd4e4;
     text-decoration: underline;

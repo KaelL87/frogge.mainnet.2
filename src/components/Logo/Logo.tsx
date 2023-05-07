@@ -8,7 +8,8 @@ import logo from '../../assets/img/logo.png'
 const Logo: React.FC = () => {
   return (
     <StyledLogo to="/">
-      <img src={logo} width="140px" height="auto" style={{ marginTop: -4 }} /> <span></span>
+      <img src={logo} width="140px" height="auto" style={{ marginTop: -4 }} />{' '}
+      <span></span>
     </StyledLogo>
   )
 }
@@ -25,6 +26,10 @@ const StyledLogo = styled(Link)`
   font-size: 1.1em;
   color: #fff;
   font-weight: 100;
+  transition: transform 0.3s ease 0s;
+  &:hover {
+    transform: rotate(-5deg);
+  }
 
   img {
     margin-right: 12px;
@@ -32,8 +37,8 @@ const StyledLogo = styled(Link)`
   span {
     margin-right: 8px;
     font-weight: 500;
-    @media screen and (max-width:768px) {
-      display:none !important;
+    @media screen and (max-width: 768px) {
+      display: none !important;
     }
   }
 `

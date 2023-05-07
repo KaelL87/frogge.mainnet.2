@@ -30,12 +30,15 @@ const StyledResponsiveWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 512px;
+  min-width: 300px;
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}px) {
     flex: 1;
     position: absolute;
     top: 100%;
     right: 0;
     left: 0;
+    width: 87%;
+    margin: 0 auto;
     max-height: calc(100% - ${(props) => props.theme.spacing[4]}px);
     animation: ${mobileKeyframes} 0.3s forwards ease-out;
   }

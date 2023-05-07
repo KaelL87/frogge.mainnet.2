@@ -6,9 +6,7 @@ import useYam from '../../../hooks/useYam'
 import { getERC20Address } from '../../../farm/utils'
 
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import {
-  getBalanceNumber,
-} from '../../../utils/formatBalance'
+import { getBalanceNumber } from '../../../utils/formatBalance'
 
 import Button from '../../Button'
 import CardIcon from '../../CardIcon'
@@ -19,14 +17,14 @@ import ModalContent from '../../ModalContent'
 import ModalTitle from '../../ModalTitle'
 import Spacer from '../../Spacer'
 import Value from '../../Value'
-import {getEthChainInfo} from "../../../utils/getEthChainInfo";
+import { getEthChainInfo } from '../../../utils/getEthChainInfo'
 
 import imageLTO from '../../../assets/img/logo-rev.png'
 
 const {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ethscanType
-} = getEthChainInfo();
+  ethscanType,
+} = getEthChainInfo()
 
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, reset } = useWallet()
@@ -72,11 +70,7 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
         />
       </ModalContent>
       <ModalActions>
-        <Button
-            onClick={onDismiss}
-            text="Cancel"
-            variant="secondary"
-        />
+        <Button onClick={onDismiss} text="Cancel" variant="secondary" />
       </ModalActions>
     </Modal>
   )
@@ -96,4 +90,4 @@ const StyledBalanceWrapper = styled.div`
   margin-bottom: ${(props) => props.theme.spacing[4]}px;
 `
 
-export default AccountModal;
+export default AccountModal

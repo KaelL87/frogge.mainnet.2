@@ -24,16 +24,15 @@ const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title }) => {
 
 const StyledPageHeader = styled.div`
   width:100%;
-  height: 300px;
+  min-height: 200px;
   background: transparent;
   align-items: center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: ${(props) => props.theme.spacing[6]}px;
-  padding-top: ${(props) => props.theme.spacing[6]}px;
-  margin: 0 auto;
+  margin: 10px auto;
+  text-align: center;
 `
 
 const StyledIcon = styled.div`

@@ -22,7 +22,7 @@ import { getApr } from '../../utils/getApr'
 
 const Farm: React.FC = () => {
   const { farmId } = useParams<{ farmId: string }>()
-  
+
   const [apr, setApr] = useState(null)
 
   const {
@@ -67,18 +67,17 @@ const Farm: React.FC = () => {
   }, [earnToken])
   useEffect(() => {
     async function fetchApr() {
-      const temp = await getApr();
-      console.log(temp);
-      setApr(temp); 
-      return; //Should get decimals from contract or config
+      const temp = await getApr()
+      setApr(temp)
+      return //Should get decimals from contract or config
     }
-      fetchApr();
+    fetchApr()
   }, [])
   return (
     <>
       <PageHeader
         subtitle={`Deposit ${lpTokenName} Tokens and earn $FRGE`}
-        title={`${name} ${apr ?apr.apr : '0'}% APR`}
+        title={`${name} ${apr ? apr.apr : '0'}% APR`}
       />
       <StyledFarm>
         <StyledCardsWrapper>
@@ -102,6 +101,9 @@ const Farm: React.FC = () => {
             display: 'flex',
             flex: 1,
             justifyContent: 'center',
+            maxWidth: '355px',
+            paddingLeft: '30px',
+            paddingRight: '30px',
           }}
         >
           <Button
@@ -111,17 +113,17 @@ const Farm: React.FC = () => {
             href={`https://frogge.finance/`}
           />
         </div>
-        <Spacer size="lg" />
+        <Spacer size="sm" />
       </StyledFarm>
     </>
   )
 }
 
 const StyledFarm = styled.div`
-  margin-top: -70px;
   align-items: center;
   display: flex;
   flex-direction: column;
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -130,8 +132,13 @@ const StyledFarm = styled.div`
 const StyledCardsWrapper = styled.div`
   display: flex;
   width: 100%;
+
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 40px;
   @media (max-width: 768px) {
     width: 100%;
+    gap: 20px;
     flex-flow: column nowrap;
     align-items: center;
   }
@@ -141,6 +148,7 @@ const StyledCardWrapper = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+  max-width: 365px;
   @media (max-width: 768px) {
     width: 80%;
   }

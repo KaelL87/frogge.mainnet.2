@@ -66,7 +66,6 @@ const Farms: React.FC = () => {
 }
 
 const StyledFarms = styled.div`
-  margin-top: -70px;
   align-items: center;
   display: flex;
   flex-direction: column;

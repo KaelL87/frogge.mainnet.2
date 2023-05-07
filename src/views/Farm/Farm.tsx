@@ -132,10 +132,9 @@ const StyledFarm = styled.div`
 const StyledCardsWrapper = styled.div`
   display: flex;
   width: 100%;
-
-  width: 100%;
   justify-content: space-evenly;
   gap: 40px;
+
   @media (max-width: 768px) {
     width: 100%;
     gap: 20px;

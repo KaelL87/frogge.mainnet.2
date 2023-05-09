@@ -1,20 +1,19 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 import logo from '../../assets/img/logo.png'
 
 const Logo: React.FC = () => {
   return (
-    <StyledLogo to="https://www.frogge.finance">
+    <StyledLogo href="https://www.frogge.finance">
       <img src={logo} width="140px" height="auto" style={{ marginTop: -4 }} />{' '}
       <span></span>
     </StyledLogo>
   )
 }
 
-const StyledLogo = styled(Link)`
+const StyledLogo = styled.a`
   align-items: center;
   display: flex;
   justify-content: center;
